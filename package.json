@@ -1,0 +1,23 @@
+{
+  "name": "meshblu-connector-configurator-meshblu-json",
+  "version": "1.0.0",
+  "description": "Configure Meshblu Connectors using PM2 using a directory tree of meshblu.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/meshblu-connector-configurator-meshblu-json.git"
+  },
+  "keywords": [
+    "meshblu",
+    "meshblu-connector"
+  ],
+  "author": "Octoblu <npm@octoblu.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/meshblu-connector-configurator-meshblu-json/issues"
+  },
+  "homepage": "https://github.com/octoblu/meshblu-connector-configurator-meshblu-json#readme"
+}
