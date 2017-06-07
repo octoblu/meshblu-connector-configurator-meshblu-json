@@ -34,5 +34,12 @@
       "node_modules/meshblu-connector-runner/*.js",
       "node_modules/meshblu-connector-runner/dist/*.js"
     ]
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "dashdash": "^1.14.1",
+    "glob": "^7.1.2",
+    "jsonfile": "^3.0.0",
+    "meshblu-connector-daemon": "^1.0.4"
   }
 }
