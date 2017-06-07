@@ -1,0 +1,7 @@
+Package: meshblu-connector-configurator-meshblu-json
+Version: 1.0.0-1
+Section: base
+Priority: optional
+Architecture: armhf
+Maintainer: Octoblu, Inc. <npm@octoblu.com>
+Description: Meshblu Connector Configurator meshblu-json

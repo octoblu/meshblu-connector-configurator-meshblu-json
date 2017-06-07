@@ -5,6 +5,7 @@
   "bin": "command.js",
   "main": "index.js",
   "scripts": {
+    "package": "pkg --out-dir ./deploy ./command.js",
     "test": "exit 0",
     "build": "exit 0"
   },
@@ -40,6 +41,7 @@
     "dashdash": "^1.14.1",
     "glob": "^7.1.2",
     "jsonfile": "^3.0.0",
-    "meshblu-connector-daemon": "^1.0.4"
+    "meshblu-connector-daemon": "^1.0.4",
+    "pkg": "^4.0.0"
   }
 }

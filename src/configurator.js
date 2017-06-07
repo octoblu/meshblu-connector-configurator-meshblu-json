@@ -5,9 +5,10 @@ const readFile = util.promisify(require("jsonfile").readFile)
 const { MeshbluConnectorDaemon } = require("meshblu-connector-daemon")
 
 class MeshbluConnectorConfigurator {
-  constructor({ configurationsPath, connectorsPath }) {
-    this.configurationsPath = configurationsPath
-    this.connectorsPath = connectorsPath
+  constructor({ connectorHome }) {
+    this.connectorHome = connectorHome
+    this.connectorsPath = path.resolve(path.join(connectorHome, "connectors"))
+    this.configurationsPath = path.resolve(path.join(connectorHome, "config", "meshblu-json"))
   }
 
   configurate() {

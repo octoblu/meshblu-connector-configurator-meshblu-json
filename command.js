@@ -18,17 +18,17 @@ const CLI_OPTIONS = [
     help: "Print this help and exit.",
   },
   {
-    names: ["connectors-path"],
+    names: ["connector-home"],
     type: "string",
-    env: "MESHBLU_CONNECTOR_CONNECTORS_PATH",
+    env: "MESHBLU_CONNECTOR_HOME",
     help: "Base location of meshblu connectors",
     helpArg: "PATH",
   },
   {
-    names: ["configurations-path"],
+    names: ["pm2-home"],
     type: "string",
-    env: "MESHBLU_CONNECTOR_CONFIGURATIONS_PATH",
-    help: "Base location of meshblu ",
+    env: "PM2_HOME",
+    help: "Base location of meshblu-connector-pm2",
     helpArg: "PATH",
   },
 ]
@@ -66,20 +66,20 @@ class MeshbluConnectorConfiguratorCommand {
 
   async run() {
     const options = this.parseArgv({ argv: this.argv })
-    const { connectors_path, configurations_path } = options
+    const { connector_home, pm2_home } = options
     var errors = []
-    if (!connectors_path) errors.push(new Error("MeshbluConnectorCommand requires --connectors-path or MESHBLU_CONNECTOR_CONNECTORS_PATH"))
-    if (!configurations_path) errors.push(new Error("MeshbluConnectorCommand requires --configurations-path or MESHBLU_CONNECTOR_CONFIGURATIONS_PATH"))
+    if (!connector_home) errors.push(new Error("MeshbluConnectorCommand requires --connector-home or MESHBLU_CONNECTOR_HOME"))
+    if (!pm2_home) errors.push(new Error("MeshbluConnectorCommand requires --pm2-home or PM2_HOME"))
 
     if (errors.length) {
-      console.log(`usage: meshblu-connector-pkg [OPTIONS]\noptions:\n${this.parser.help({ includeEnv: true })}`)
+      console.log(`usage: meshblu-connector-configurator-meshblu-json [OPTIONS]\noptions:\n${this.parser.help({ includeEnv: true })}`)
       errors.forEach(error => {
         console.error(chalk.red(error.message))
       })
       process.exit(1)
     }
 
-    const configurator = new MeshbluConnectorConfigurator({ configurationsPath: configurations_path, connectorsPath: connectors_path })
+    const configurator = new MeshbluConnectorConfigurator({ connectorHome: connector_home, pm2Home: pm2_home })
     try {
       await configurator.configurate()
     } catch (error) {
