@@ -1,7 +1,7 @@
 const path = require("path")
-const util = require("util")
-const glob = util.promisify(require("glob"))
-const readFile = util.promisify(require("jsonfile").readFile)
+const Promise = require("bluebird")
+const glob = Promise.promisify(require("glob"))
+const fs = require("fs-extra")
 const { MeshbluConnectorDaemon } = require("meshblu-connector-daemon")
 
 class MeshbluConnectorConfigurator {
@@ -13,13 +13,7 @@ class MeshbluConnectorConfigurator {
 
   configurate() {
     const globPath = path.join(this.configurationsPath, "meshblu-connector-*", "*.json")
-    return glob(globPath).then(files => {
-      let processes = []
-      files.forEach(file => {
-        processes.push(this.daemonize(file))
-      })
-      return Promise.all(processes)
-    })
+    return glob(globPath).each(file => this.daemonize(file))
   }
 
   daemonize(file) {
