@@ -58,3 +58,4 @@ typings/
 .env
 
 deploy
+pkg-config.json
