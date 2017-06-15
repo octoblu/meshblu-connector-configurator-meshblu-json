@@ -1,6 +1,6 @@
 {
   "name": "meshblu-connector-configurator-meshblu-json",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Configure Meshblu Connectors using PM2 using a directory tree of meshblu.json",
   "bin": {
     "meshblu-connector-configurator-meshblu-json": "command.js"

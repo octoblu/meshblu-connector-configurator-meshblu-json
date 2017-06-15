@@ -17,7 +17,7 @@ class MeshbluConnectorConfigurator {
   }
 
   daemonize(file) {
-    return readFile(file).then(data => {
+    return fs.readJson(file).then(data => {
       const type = path.basename(path.dirname(file))
       const { uuid, token, domain } = data
       const connectorsPath = this.connectorsPath
