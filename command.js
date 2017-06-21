@@ -4,7 +4,7 @@ const path = require("path")
 const util = require("util")
 const fs = require("fs")
 const chalk = require("chalk")
-const { MeshbluConnectorConfigurator } = require("./src/configurator")
+const { MeshbluConnectorConfigurator } = require("./lib/configurator")
 
 const CLI_OPTIONS = [
   {
