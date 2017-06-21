@@ -1,6 +1,6 @@
 {
   "name": "meshblu-connector-configurator-meshblu-json",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Configure Meshblu Connectors using PM2 using a directory tree of meshblu.json",
   "bin": {
     "meshblu-connector-configurator-meshblu-json": "command.js"
@@ -8,8 +8,7 @@
   "main": "index.js",
   "scripts": {
     "package": "pkg --out-dir ./deploy ./command.js",
-    "test": "exit 0",
-    "build": "exit 0"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
@@ -45,7 +44,6 @@
     "fs-extra": "^3.0.1",
     "glob": "^7.1.2",
     "jsonfile": "^3.0.0",
-    "meshblu-connector-daemon": "^1.0.4",
-    "pkg": "^4.0.0"
+    "meshblu-connector-daemon": "^1.0.4"
   }
 }
